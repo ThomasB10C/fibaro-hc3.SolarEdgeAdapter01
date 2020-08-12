@@ -2,7 +2,7 @@
 
 **Download der QuickApp**
 
-Die ZIP-Datei "seAdapter01 V1.0.fqa.zip" enthält den Script-Code für die QuickApp des seAdapters1. Über "Download"können Sie sich diese ZIP-Datei [(Download hier)](/QuickAppCode/seAdapter1_V1.0.fqa.zip) auf ihren Computer herunterladen. Dann entpacken sie bitte diese Datei in einem Verzeichnis; die entpackte Programmdatei hat den Dateityp **.fqa**.
+Die ZIP-Datei "seAdapter01 V1.0.fqa.zip" enthält den Script-Code für die QuickApp des seAdapters1. Über "Download"können Sie sich diese ZIP-Datei [(Download hier)](seAdapter01_V1.0.fqa.zip) auf ihren Computer herunterladen. Dann entpacken sie bitte diese Datei in einem Verzeichnis; die entpackte Programmdatei hat den Dateityp **.fqa**.
 
 **Installation des sonnenAdapters1 im Fibaro HC3**
 
