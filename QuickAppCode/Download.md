@@ -12,4 +12,4 @@ Starten Sie das HC3 und wählen Sie den Menüpunkt "Systemeinstellungen/Geräte/
 
 **Initiale Einstellung der Startparameter**
 
-Gehen Sie so vor, wie vorn in dem Readme.md-Dokument bereits erläutert. Besonders wichtig ist die Eingabe der **IP-Adresse ihrer sonnenBatterie** in das Feld **ip**! Speichern Sie, nachdem Sie die IP-Adresse eingegeben haben, diese mit Hilfe des unteren Buttions **Speichern** ab.
+Gehen Sie so vor, wie vorn in dem Readme.md-Dokument bereits erläutert.
