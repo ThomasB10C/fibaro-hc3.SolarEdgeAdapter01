@@ -3,7 +3,7 @@ SolarEdge-Wechselrichter - QuickApp für Fibaro HC3
 
 |seAdapter1 für Fibaro HC3               |für das SolarEdge-Portal    |
 |:-------------------------------------:|:------------------------------------:|
-|![sbAdapterLogo](/images/seAdapter-Logo.png)   |![SolarEdgeLogo](/Images/sonnenLogo450.png)             |
+|![seAdapter1Logo](/images/seA1-Logo.png)   |![SolarEdgeLogo](/images/seA1-SolarEdge-Logo#.png)             |
 
 ## Kurzbeschreibung
 Die QuickApp **seAdapter1** liest ausgewählte Betriebsdaten eines SolarEdge-Wechselrichters über die API-Schnittstelle des SolarEdge-Portals zyklisch aus und stellt diese Daten als Übersicht in der QuickApp sowie im Bereich der globalen Variablen des Fibaro HC3 zur Verfügung.
@@ -17,7 +17,7 @@ Für den ordnungsgemäßen Betrieb der QuickApp sind Voreinstellungen (Parameter
 4. **globalvalues:** - Schalter, mit dessen Hilfe das Speichern von Livedaten im Bereich der globalen Variablen der´s HC3 aktiviert werden kann (**globalValues**=  **no/yes**)
 5. **interval:** - Zeiteinstellung für den Abfragezyklus der API-Daten (interval= **60** steht für 60 Sekunden = 1 Minute)
 
-![viewlokaleVariablen](/images/seA1-lokaleVariablen#.png "lokale Variablen")
+![viewlokaleParameter](/images/seA1-lokaleParameter#.png "lokale Parameter")
 
 Hinweis: der Parameter **interval** wird im unteren Wertebereich auf mindestens 60 Sekunden begrenzt, größere Werte können eingestellt werden.
 
@@ -73,7 +73,7 @@ Damit kann man jetzt, bspw. beim Erreichen eines festgelegten Erzeugungswertes (
 
 Das folgende Bild zeigt ein Beispiel für eine grafische Blockszene, die gestartet (getriggert) wird, wenn die PV-Anlage abgeregelt wurde, bspw. bei dem Erreichen der 70% Grenze für die maximale Einspeisemenge in das öffentliche Stromnetz. Dafür werden die Leistungsdaten für die Produktion, die Einspeisung und die aktuellen Daten eines SolarEdge-Wechselrichters (siehe seAdapter01) benutzt (Bedingung **If**). Sobald alle Bedingungen erfüllt sind (**Trigger/On + UND**), wird ein Verbraucher, hier ist es ein WallPlug, oder ein Verbaucher mit einer hohen Leistung (**Then**) angeschaltet. Gleichzeitig wird an den Anlagenbetreiber eine Mitteilung versendet, mit deren Hilfe der Anlagenbetreiber die Information erhält, dass die PV-Anlage gerade abgeregelt worden ist. Welche Geräte nach Erfüllung der Bedingungen hinzu geschaltet werden, kann der Nutzer mit Blockszenen frei festlegen.
 
-![SampleSzene](/images/SampleSzene#.png "Beispiel für eine Szene")
+![SampleSzene](/images/seA1-SampleSzene#.png "Beispiel für eine Szene")
 
 Ein anderes Beispiel für eine sinnvolle Szene wäre die Übermittlung einer Nachricht, wenn die Batterie leer ist oder die Batterie bereits am 2. Tag keinen Ladevorgang mehr durchgeführt hat, obwohl an diesen Tagen von der PV-Anlage Strom erzeugt wurde. Diese Automatisierung würde man in einer LUA-Szene aufbauen und ausführen lassen.
 
