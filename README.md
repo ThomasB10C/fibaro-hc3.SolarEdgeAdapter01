@@ -19,7 +19,9 @@ Für den ordnungsgemäßen Betrieb der QuickApp sind Voreinstellungen (Parameter
 
 ![viewlokaleParameter](/images/seA1-lokaleParameter2.png "lokale Parameter")
 
-Hinweis: Der Parameter **interval** wird im unteren Wertebereich auf 60 Sekunden begrenzt, größere Werte können jederzeit eingestellt werden.
+Hinweise: 
+1. Der Parameter **interval** wird im unteren Wertebereich auf 60 Sekunden begrenzt, größere Werte können jederzeit eingestellt werden.
+2. Der Parameter 'site-id' wird im SolarEdge-Portal bereitgestellt, wenn man dort als 'Admin' den Wechselrichter für die Anzeige im Internet frei gibt. Dann wird auch der Parameter 'api-key' angezeigt, den man am Besten durch Kopieren in die Zwischenablage und Hinzufügen in die QuickApp überträgt. 
 
 ## Globale Variablen
 Die QuickApp kann ermittelte Livedaten des Wechselrichters zusätzlich im Bereich der globalen Variablen des HC3 abspeichern. Damit wird die Möglichkeit geschaffen, diese Meßwerte auch für Automatisierungen in Szenen zu verwenden.
