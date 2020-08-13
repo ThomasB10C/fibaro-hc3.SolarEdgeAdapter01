@@ -71,35 +71,43 @@ Um nun die ermittelten Livedaten des Wechselrichters auch für Automatisierungen
 
 Damit kann man jetzt, bspw. beim Erreichen eines festgelegten Erzeugungswertes (bspw. sePowerCurrent) für die Produktion einer Photovoltaikanlage, einen zusätzlichen Verbraucher zuschalten, oder eine Nachricht an ein Handy oder eine Mitteilung an einen Mail-Account versenden lassen, um diesen Sachverhalt mitzuteilen. Mit den aktuellen Smarthome-Systeme kann man nach dem Erhalt der Mitteilung dann bspw. auch manuelle über den Fernzugriff einen oder mehrere zusätzliche verbraucher anschalten.
 
-Das folgende Bild zeigt ein Beispiel für eine grafische Blockszene, die gestartet (getriggert) wird, wenn die PV-Anlage abgeregelt wurde, bspw. bei dem Erreichen der 70% Grenze für die maximale Einspeisemenge in das öffentliche Stromnetz. Dafür werden die Leistungsdaten für die Produktion, die Einspeisung und die aktuellen Daten eines SolarEdge-Wechselrichters (siehe seAdapter01) benutzt (Bedingung **If**). Sobald alle Bedingungen erfüllt sind (**Trigger/On + UND**), wird ein Verbraucher, hier ist es ein WallPlug, oder ein Verbaucher mit einer hohen Leistung (**Then**) angeschaltet. Gleichzeitig wird an den Anlagenbetreiber eine Mitteilung versendet, mit deren Hilfe der Anlagenbetreiber die Information erhält, dass die PV-Anlage gerade abgeregelt worden ist. Welche Geräte nach Erfüllung der Bedingungen hinzu geschaltet werden, kann der Nutzer mit Blockszenen frei festlegen.
+Das folgende Bild zeigt ein Beispiel für eine grafische Blockszene, die gestartet (getriggert) wird, wenn die PV-Anlage abgeregelt wurde, bspw. bei dem Erreichen der 70% Grenze für die maximale Einspeisemenge in das öffentliche Stromnetz. Dafür werden die Leistungsdaten für die Produktion (siehe sbAdapter1) und die aktuellen Erzeugungsdaten des SolarEdge-Wechselrichters benutzt (Bedingung **If**). Sobald alle Bedingungen erfüllt sind (**Trigger-On + UND**), wird ein Verbraucher, hier ist es ein WallPlug (**Then**), angeschaltet. Gleichzeitig wird an den Anlagenbetreiber eine Mitteilung versendet, mit deren Hilfe der Anlagenbetreiber die Information erhält, dass die PV-Anlage gerade abgeregelt worden ist. Welche weiteren Geräte noch hinzu geschaltet werden, kann der Nutzer mit Blockszenen frei festlegen.
 
 ![SampleSzene](/images/seA1-SampleSzene2.png "Beispiel für eine Szene")
 
-Ein anderes Beispiel für eine sinnvolle Szene wäre die Übermittlung einer Nachricht, wenn die Batterie leer ist oder die Batterie bereits am 2. Tag keinen Ladevorgang mehr durchgeführt hat, obwohl an diesen Tagen von der PV-Anlage Strom erzeugt wurde. Diese Automatisierung würde man in einer LUA-Szene aufbauen und ausführen lassen.
+## API-Schnittstelle des Wechselrichters bzw. des SolarEdge-Portals
 
-## API-Schnittstelle der sonnenBatterie
-
-Die QuickApp sonnenAdapter1 nutzt die folgende Abfragesyntax zur zyklischen Erfassung der Livedaten der sonnenBatterie:
+Die QuickApp seAdapter1 nutzt die folgende Abfragesyntax zur zyklischen Erfassung der Livedaten des Wechselrichters:
 
 ````https://monitoringapi.solaredge.com/site/<site-id>/overview.json?api_key=<api-key>)````
 
-Diese Daten werden zur Anzeige gebracht und in den lokalen bzw. globalen Variablen als Momentanwerte gespeichert; eine Langzeitspeicherung der Daten, bspw. in einer Datenbank, erfolgt nicht.
+Diese Daten werden zur Anzeige gebracht und in den globalen Variablen als Momentanwerte gespeichert; eine Langzeitspeicherung der Daten, bspw. in einer Datenbank, erfolgt nicht.
 
-Die folgenden API-Daten der Batterie werden verarbeitet:
+Die folgenden API-Daten des Wechselrichters werden verarbeitet:
 
 ##### JSON
 
 ````
 {
-"overview": 
-  {
+"overview": {
   "lastUpdateTime":"2020-08-13 15:22:58",
-      "lifeTimeData":{"energy":2.8810484E7, "revenue":3541.987},
-  "lastYearData": {"energy":5841805.0},
-  "lastMonthData": {"energy":445340.0},
-  "lastDayData": {"energy":24402.0},
-  "currentPower": {"power":2377.9},
-  ...
+  "lifeTimeData":{
+          "energy":2.8810484E7, 
+          "revenue":3541.987
+   },
+  "lastYearData": {
+          "energy":5841805.0
+   },
+  "lastMonthData": {
+          "energy":445340.0
+   },
+  "lastDayData": {
+          "energy":24402.0
+   },
+  "currentPower": {
+          "power":2377.9
+   },
+   ...
   }
 }
 ````
