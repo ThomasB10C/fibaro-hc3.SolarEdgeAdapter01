@@ -1,39 +1,41 @@
 # SolarEdge-Adapter01-Fibaro-HC3
 SolarEdge-Wechselrichter - QuickApp für Fibaro HC3
 
-|sbAdapter für Fibaro HC3               |für sonnenBatterie Eco8.0 und Eco10.0    |
+|seAdapter1 für Fibaro HC3               |für das SolarEdge-Portal    |
 |:-------------------------------------:|:------------------------------------:|
-|![sbAdapterLogo](/Images/sbAdapter-Icon.png)   |![sonnenLogo](/Images/sonnenLogo450.png)             |
+|![sbAdapterLogo](/images/seAdapter-Logo.png)   |![SolarEdgeLogo](/Images/sonnenLogo450.png)             |
 
 ## Kurzbeschreibung
-Die QuickApp liest ausgewählte Betriebsdaten der sonnenBatterie über deren API-Schnittstelle aus und stellt diese in der QuickApp als Übersicht zur Verfügung. Die Daten werden regelmäßig zyklisch aus der API ausgelesen.
+Die QuickApp **seAdapter1** liest ausgewählte Betriebsdaten eines SolarEdge-Wechselrichters über die API-Schnittstelle des SolarEdge-Portals zyklisch aus und stellt diese Daten als Übersicht in der QuickApp sowie im Bereich der globalen Variablen des Fibaro HC3 zur Verfügung.
 
-## Settings
-In den Variablen der QuickApp können die folgenden Parameter voreingestellt werden:
+## Settings, Parameter
+Für den ordnungsgemäßen Betrieb der QuickApp sind Voreinstellungen (Parameter) erforderlich, die folgenden Standardwerte sind bereits eingespeichert. Bei Bedarf können mehrere der Parameter verändert werden.
 
-1. **ip:** - IP-Adresse der sonnenBatterie in der Form 999:999:999:999
-2. **wait:** - Schalter, damit kann die QuickApp in den Leerlauf versetzt werden (wait= **yes**)
-3. **interval:** - Zeiteinstellung für den Abfragezyklus der Batteriedaten (interval= **60** steht für 60 Sekunden = 1 Minute)
+1. **site-id:** - ID-Kennung des SolarEdge-Wechselrichters im SolarEdge-Portal in der Form 999999.
+2. **api-key:** - Zugangskennung für die Abfrage der API-Schnittstelle des SolarEdge-Wechselrichters im SolarEdge-Portal.
+3. **wait:** - Schalter, mit dessen Hilfe die QuickApp in den Leerlauf versetzt werden kann (wait= **yes/no**)
+4. **globalvalues:** - Schalter, mit dessen Hilfe das Speichern von Livedaten im Bereich der globalen Variablen der´s HC3 aktiviert werden kann (**globalValues**=  **no/yes**)
+5. **interval:** - Zeiteinstellung für den Abfragezyklus der API-Daten (interval= **60** steht für 60 Sekunden = 1 Minute)
 
-Hinweis: der Parameter **interval** wird im unteren Bereich auf mindestens 60 Sekunden begrenzt, damit die Batterie noch weitere Datenabfragen bedienen kann.
+Hinweis: der Parameter **interval** wird im unteren Wertebereich auf mindestens 60 Sekunden begrenzt, größere Werte können eingestellt werden.
 
 ## Globale Variablen
-Die folgenden Livedaten werden von der QuickApp auch simultan im zentralen Bereich für globale Variablen abgespeichert. Damit wird die Möglichkeit geschaffen, die Werte bzw. die Zustandswerte der Variablen auch für Automatisierungen in Szenen zu verwenden.
+Die QuickApp kann ermittelte Livedaten des Wechselrichters im Bereich der globalen Variablen des HC3 abspeichern. Damit wird die zusätzliche Möglichkeit geschaffen, diese Meßwerte auch für Automatisierungen in Szenen zu verwenden.
 
-1. **sbTimeStamp:** - Zeitstempel für die letzte Messung. Der Zeitstempel zeigt das Datum in der Form <yyyy-mm-dd> und die Uhrzeit in der Form <hh:mm:ss> an.  
+1. **seTimeStamp:** - Zeitstempel für die letzte Messung. Der Zeitstempel zeigt das Datum in der Form <yyyy-mm-dd> und die Uhrzeit in der Form <hh:mm:ss> an.  
 
-2. **sbSystemstatus:** - Systemstatus der sonnenBatterie. Die Statuswerte *OnGrid* bzw.*OffGrid* werden aus der API übernommen.
+2. **sePowerCurrent:** - Aktuelle Erzeugung der PV-Anlage zum Zeitpunkt der Datenabfrage in kWh (Meßwert des Wechselrichters).
 
-3. **sbProduction:** - Erzeugung der Photovoltaikanlage in kWh zum Zeitpunkt der Datenabfrage.
+3. **seEnergyDay:** - Tageswert der Erzeugung der Photovoltaikanlage in kWh zum Zeitpunkt der Datenabfrage.
 
-4. **sbConsumption:** - Verbrauch in kWh zum Zeitpunkt der Datenabfrage.
+4. **seEnergyMonth:** - Monatswert der Erzeugung der Photovoltaikanlage in kWh zum Zeitpunkt der Datenabfrage.
 
-5. **sbGridFeedIn:** - Netzeinspeisung (**positiver Wert**) bzw. **Netzbezug** (**negativer Wert**) in kWh zum Zeitpunkt der Datenabfrage.
+5. **seEnergyYear:** - Jahreswert der Erzeugung der Photovoltaikanlage in kWh zum Zeitpunkt der Datenabfrage.
 
-6. **sbPac_total:** - Ladung bzw. Entladung der sonnenBatterie in kWh zum Zeitpunkt der Datenabfrage. Bei **Ladung** der Batterie wird ein **negativer Wert** angezeigt, bei **Entladung** der Batterie wird ein **positiver Wert** angezeigt.
+6. **seEnergyLifetime:** - Gesamtwert der Erzeugung der Photovoltaikanlage seit der Inbetriebnahme in kWh zum Zeitpunkt der Datenabfrage.
 
-7. **sbRSOC:** - Ladezustand der sonnenBatterie in %. Der Ladezustand der Batterie greift auf die API-Daten zurück, der Wertebereich liegt zwischen 0% und 100%.
-  
+7. **seMoneyLifetime:** - Finanzielles Gesamtergebnis der Photovoltaikanlage seit der Inbetriebnahme in Euro zum Zeitpunkt der Datenabfrage. Dieser Wert wird im SolarEdge-Portal aus der eingegebenen Vergütung für Strom/kWh und dem Gesamtwert der Energieerzeugung berechnet.
+
 ## Voraussetzungen
 Für die Nutzung des sonnenAdapters01 ist ein SmartHome-System von Fibaro HC3 erforderlich. QuickApps sind Erweiterungen des Funktionsumfangs des Hubs, diese werden dort als "Geräte" verwaltet.
 
