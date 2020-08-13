@@ -3,7 +3,7 @@ SolarEdge-Wechselrichter - QuickApp für Fibaro HC3
 
 |seAdapter1 für Fibaro HC3               |für das SolarEdge-Portal    |
 |:-------------------------------------:|:------------------------------------:|
-|![seA1-Logo](/images/seA1-Logo#.png)   |![SolarEdgeLogo](/images/seA1-SolarEdge-Logo#.png)             |
+|![seA1-Logo](/images/seA1-Logo2.png)   |![SolarEdgeLogo](/images/seA1-SolarEdge-Logo#.png)             |
 
 ## Kurzbeschreibung
 Die QuickApp **seAdapter1** liest ausgewählte Betriebsdaten eines SolarEdge-Wechselrichters über die API-Schnittstelle des SolarEdge-Portals zyklisch aus und stellt diese Daten als Übersicht in der QuickApp sowie im Bereich der globalen Variablen des Fibaro HC3 zur Verfügung.
