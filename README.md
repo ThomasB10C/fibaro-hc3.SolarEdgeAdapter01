@@ -81,7 +81,7 @@ Ein anderes Beispiel für eine sinnvolle Szene wäre die Übermittlung einer Nac
 
 Die QuickApp sonnenAdapter1 nutzt die folgende Abfragesyntax zur zyklischen Erfassung der Livedaten der sonnenBatterie:
 
-````http://<ip-sonnenBatterie>:8080/api/v1/status````
+````https://monitoringapi.solaredge.com/site/"<site-id>/overview.json?api_key=<api-key>)````
 
 Diese Daten werden zur Anzeige gebracht und in den lokalen bzw. globalen Variablen als Momentanwerte gespeichert; eine Langzeitspeicherung der Daten, bspw. in einer Datenbank, erfolgt nicht.
 
@@ -91,17 +91,7 @@ Die folgenden API-Daten der Batterie werden verarbeitet:
 
 ````
 {
-...,
-"Consumption_W":358,
-...,
-"GridFeedIn_W":5065,
-...,
-"Pac_total_W":-1031,
-"Production_W":6458,
-"RSOC":58,
-...,
-"SystemStatus":"OnGrid",
-"Timestamp":"2020-08-05 13:18:30",
-...
+"overview":
+{"lastUpdateTime":"2020-08-13 15:22:58","lifeTimeData":{"energy":2.8810484E7,"revenue":3541.987},"lastYearData":{"energy":5841805.0},"lastMonthData":{"energy":445340.0},"lastDayData":{"energy":24402.0},"currentPower":{"power":2377.0},"measuredBy":"INVERTER"}
 }
 ````
