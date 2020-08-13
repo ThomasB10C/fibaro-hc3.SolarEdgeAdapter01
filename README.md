@@ -81,7 +81,7 @@ Ein anderes Beispiel für eine sinnvolle Szene wäre die Übermittlung einer Nac
 
 Die QuickApp sonnenAdapter1 nutzt die folgende Abfragesyntax zur zyklischen Erfassung der Livedaten der sonnenBatterie:
 
-````https://monitoringapi.solaredge.com/site/"<site-id>/overview.json?api_key=<api-key>)````
+````https://monitoringapi.solaredge.com/site/<site-id>/overview.json?api_key=<api-key>)````
 
 Diese Daten werden zur Anzeige gebracht und in den lokalen bzw. globalen Variablen als Momentanwerte gespeichert; eine Langzeitspeicherung der Daten, bspw. in einer Datenbank, erfolgt nicht.
 
