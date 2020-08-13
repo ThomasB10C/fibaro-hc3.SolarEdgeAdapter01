@@ -91,7 +91,15 @@ Die folgenden API-Daten der Batterie werden verarbeitet:
 
 ````
 {
-"overview":
-{"lastUpdateTime":"2020-08-13 15:22:58","lifeTimeData":{"energy":2.8810484E7,"revenue":3541.987},"lastYearData":{"energy":5841805.0},"lastMonthData":{"energy":445340.0},"lastDayData":{"energy":24402.0},"currentPower":{"power":2377.0},"measuredBy":"INVERTER"}
+"overview": 
+  {
+  "lastUpdateTime":"2020-08-13 15:22:58",
+      "lifeTimeData":{"energy":2.8810484E7, "revenue":3541.987},
+  "lastYearData": {"energy":5841805.0},
+  "lastMonthData": {"energy":445340.0},
+  "lastDayData": {"energy":24402.0},
+  "currentPower": {"power":2377.9},
+  ...
+  }
 }
 ````
