@@ -28,7 +28,7 @@ Die QuickApp kann ermittelte Livedaten des Wechselrichters zusätzlich im Bereic
 
 1. **seTimeStamp:** - Zeitstempel für die letzte Messung. Der Zeitstempel zeigt das Datum in der Form 'yyyy-mm-dd' und die Uhrzeit in der Form 'hh:mm:ss' an.  
 
-2. **sePowerCurrent:** - Aktuelle Erzeugung der PV-Anlage zum Zeitpunkt der Datenabfrage in kWh (Meßwert des Wechselrichters).
+2. **sePowerCurrent:** - Aktuelle Erzeugung der PV-Anlage zum Zeitpunkt der Datenabfrage in kW (Meßwert des Wechselrichters).
 
 3. **seEnergyDay:** - Tageswert der Erzeugung der Photovoltaikanlage in kWh zum Zeitpunkt der Datenabfrage.
 
